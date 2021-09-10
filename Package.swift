@@ -79,7 +79,7 @@ let package = Package(
         .target(
             name: "ldid",
             dependencies: ["ldid-core"],
-            path: "AltSign/ldid",
+            path: "Sources/AltSign/ldid",
             exclude: [
                 "alt_ldid.hpp",
             ],
@@ -126,10 +126,10 @@ let package = Package(
             dependencies: ["CoreCrypto", "ldid"],
             path: "",
             exclude: [
-                "AltSign/ldid/alt_ldid.cpp",
-                "AltSign/ldid/alt_ldid.hpp",
-                "AltSign/Sources",
-                "AltSign/include/module.modulemap",
+                "Sources/AltSign/ldid/alt_ldid.cpp",
+                "Sources/AltSign/ldid/alt_ldid.hpp",
+                "Sources/AltSign/Sources",
+                "Sources/AltSign/include/module.modulemap",
                 "Dependencies/corecrypto",
                 "Dependencies/ldid",
                 "Dependencies/minizip/iowin32.c",
@@ -138,12 +138,12 @@ let package = Package(
                 "Dependencies/minizip/miniunz.c",
                 "Dependencies/minizip/ChangeLogUnzip",
             ],
-            publicHeadersPath: "AltSign/include",
+            publicHeadersPath: "Sources/AltSign/include",
             cSettings: [
-                .headerSearchPath("AltSign/**"),
-                .headerSearchPath("AltSign/ldid"),
+                .headerSearchPath("Sources/AltSign/**"),
+                .headerSearchPath("Sources/AltSign/ldid"),
                 .headerSearchPath("Dependencies/minizip"),
-                .headerSearchPath("AltSign/Capabilities"),
+                .headerSearchPath("Sources/AltSign/Capabilities"),
                 .headerSearchPath("Dependencies/ldid/libplist/include"),
                 .headerSearchPath("Dependencies/ldid"),
             ],
@@ -155,7 +155,7 @@ let package = Package(
         .target(
             name: "AltSign",
             dependencies: ["CAltSign"],
-            path: "AltSign/Sources",
+            path: "Sources/AltSign/Sources",
             cSettings: [
                 .headerSearchPath("Dependencies/minizip"),
                 .define("CORECRYPTO_DONOT_USE_TRANSPARENT_UNION=1"),
